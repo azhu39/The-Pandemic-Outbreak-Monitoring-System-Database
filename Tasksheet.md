@@ -25,12 +25,19 @@ To protect citizens’ privacy, the database for travel history monitoring shoul
 This section lists some very important use cases of the PMMS. Your database design is expected to satisfy all of these use cases. As a result, if you have designed your database based on the previous two sections but later realised that it cannot satisfy all use cases below, you need to revise your design until they can be done. Keep in mind that all use cases below can be satisfied with a single SELECT statement (unless specified otherwise). Test data is crucial for this part. Data must cover items that matches the goal and items that do not match the goal. The relationships between data items must be explained clearly in your report. 
  
 Use case 1: A person can potentially get infected if he was in the same district with someone. The government requires that, if someone is tested to be positive, all people in the same district as him in the past 48 hours (before the positive report is published) need to take viral tests. Assume that a person called Mark was tested to be positive at 19:30 on 09-Oct-2021. Please write a query that can get the phone numbers of all citizens who will potentially get infected because of him. 
+
 Use case 2:  Please first clearly describe the format of GPS locations. The format must be a valid format that is used in real life. Then mimic what happens to your database when a user moves into the range of a base station and then moves out one hour later by listing all SQL statements involved in the process. 
+
 Use case 3: The Lukewarm Kingdom wants to find out the hospitals that can do viral tests efficiently. The report generation time is calculated using report time minus the sample test time. Please write a query to find out which hospital has the least average report generation time. 
+
 Use case 4: List the phone numbers of all citizens who did two viral tests with the time window from 2021-10-03 00:00 to 2021-10-05 00:00. The two viral tests must have a gap time of at least 24 hours (at least 24 hours apart). 
+
 Use case 5: List the high-risk, mid-risk and low-risk regions using one query. High-risk districts should be listed first, followed by mid-risk districts and then low-risk regions.
+
 Use case 6: List all positive cases found in the district called “Centre Lukewarm Hillside” on 2021-10-04. The result should include the names and phone numbers of people tested to be positive. 
+
 Use case 7: Calculate the increase in new positive cases in the district called “Centre Lukewarm Hillside” on 2021-10-05 compared to 2021-10-04. The result should show a single number indicating the increment. If there are fewer new positive cases than yesterday, this number should be negative. 
+
 Use case 8: Assume that the spread rate of a virus is calculated by dividing the total number of people that were in the same district as the positive case with 48 hours (calculated in use case 1) by the total number of people among them that later confirmed to be infected within 14 days. Again, assume that a person called Mark was tested to be positive at 19:30 on 09-Oct-2021 and he is the only person in the country that had coughid-19 at that time. Please write a query that calculates the spread rate of the virus. 
 
 
